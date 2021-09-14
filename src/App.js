@@ -11,7 +11,11 @@ function App() {
       <section className="container">
         <h3>{people.length} birthdays today</h3>
         <List people={people}></List>
-        <button onClick={() => setPeople([])}>clear all</button>
+        {people.length !== 0 ? (
+          <button onClick={() => setPeople([])}>clear all</button>
+        ) : (
+          <button onClick={() => setPeople(data)}>reload birthdays</button>
+        )}
       </section>
     </main>
   );
